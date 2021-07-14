@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scaled=1.0"/>
+  <title>Taxonomy</title>
+<style>
+  * {
+  box-sizing: border-box;
+}
+h3{font-size:30px;}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table             { 
+  border-collapse: separate;
+    border-spacing: 0 2em;
+  background:white;
+  border-radius:6px;
+  max-width:1000px; 
+  width:100%;
+  table-layout:fixed;
+  margin:0 auto;
+  position:relative;
+  
+  *               { position:relative; }
+  td {
+  text-align: center;
+  vertical-align: middle;
+  word-break: break-all;
+}
+  td,th
+             { 
+              font-size: 80px;
+            width: 150px;
+        text-align: left;
+        border: 1px solid black;
+        padding: 1em;}
+
+  thead tr        { 
+    height:60px;
+    background:#FFED86;
+    font-size:50px;
+  }
+  
+  tbody tr        { height:48px; border-bottom:1px solid #E3F1D5 ;
+    &:last-child  { border:0; }
+  }
+
+}
+body               { 
+  background:#9BC86A; 
+  font:400 14px 'Calibri','Arial';
+  padding:20px;
+}
+</style>
+</head>
+<body>
+  <h1 style="text-align:center;font-size:40px;">SEARCH RESULTS</h1>
+  <h3 style="text-align:center;">TOP MATCH : {% print(data[0][0])%}</h3>
+  <img src="./static/temp.jpg" alt = "user_image"  style="width:50%;display: block;
+  margin-left: auto;
+  margin-right: auto;">
+  <br>
+
+  <h3 style="text-align:center;">Prediction {{predictions[0]['probability']}} </h3>
+  <br>
+
+  <h1 style="text-align:center;font-size:40px;">TAXONOMY</h1><br>
+<table>
+      <thead>
+        <tr>
+          <th> </th>
+          <th style="font-weight:bolder;font-size:30px;text-align:left;">DESCRIPTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:bolder;font-size:30px;padding:1em;">Bird Name</td>
+          <td style="font-size:30px;word-wrap: break-word;">{% print(data[0][0])%}</td>
+        </tr>
+           <tr>
+          <td style="font-weight:bolder;font-size:30px;padding:1em;">Kingdom</td>
+          <td style="font-size:30px;word-wrap: break-word;">{% print(data[0][1])%}</td>
+        </tr>
+           <tr>
+          <td style="font-weight:bolder;font-size:30px;padding:1em;">Phylum</td>
+          <td style="font-size:30px;word-wrap: break-word;">{% print(data[0][2])%}</td>
+        </tr>
+           <tr>
+          <td style="font-weight:bolder;font-size:30px;padding:1em;">Class</td>
+          <td style="font-size:30px;word-wrap: break-word;">{% print(data[0][3])%}</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bolder;font-size:30px;padding:1em;">Order</td>
+          <td style="font-size:30px;word-wrap: break-word;">{% print(data[0][4])%}</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bolder;font-size:30px;padding:1em;">Family</td>
+          <td style="font-size:30px;word-wrap: break-word;">{% print(data[0][5])%}</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bolder;font-size:30px;padding:1em;">Binomial Name</td>
+          <td style="font-size:30px;word-wrap: break-word;">{% print(data[0][6])%}</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bolder;font-size:30px;padding:1em;">Distribution</td>
+          <td style="font-size:30px;word-wrap: break-word;">{% print(data[0][7])%}</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bolder;font-size:30px;padding:1em;">Habitat</td>
+          <td style="font-size:30px;word-wrap: break-word;">{% print(data[0][8])%}</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bolder;font-size:30px;padding:1em;">Diet</td>
+          <td style="font-size:30px;word-wrap: break-word;">{% print(data[0][9])%}</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bolder;font-size:30px;padding:1em;">Conservation Status</td>
+          <td style="font-size:30px;word-wrap: break-word;">{% print(data[0][10])%}</td>
+        </tr>
+      </tbody>
+    </table>
+      
+  </body>
+  </html>
